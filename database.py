@@ -17,5 +17,6 @@ def run_upgrade(connection, cfg):
 
 
 async def run_async_upgrade():
+    # async_engine = create_async_engine("sqlite+aiosqlite://", echo=True)
     async with async_engine.begin() as conn:
         await conn.run_sync(run_upgrade, config.Config("alembic.ini"))
