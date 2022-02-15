@@ -1,5 +1,3 @@
-from typing import Optional
-
 from fastapi import FastAPI
 
 from database import run_async_upgrade
