@@ -8,12 +8,18 @@ pip install -r requirements.txt
 
 ## Run app
 
-Halts on startup because the db upgrade is not working. Remove the function decorated with `@app.on_event("startup")` to make the app work.
+Run a Postgres instance with docker:
+
+```
+docker run -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres:alpine
+```
+
+Run the app:
 
 ```
 uvicorn main:app --reload
 ```
-
+Note: App halts on startup because the db upgrade is not working. Remove the function decorated with `@app.on_event("startup")` to make the app work.
 
 ## Database
 ### cli: cenerate revision (works)
