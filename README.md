@@ -19,21 +19,20 @@ Run the app:
 ```
 uvicorn main:app --reload
 ```
-Note: App halts on startup because the db upgrade is not working. Remove the function decorated with `@app.on_event("startup")` to make the app work.
 
 ## Database
-### cli: cenerate revision (works)
+### cli: cenerate revision
 
 ```
 alembic revision --autogenerate
 ```
 
-### cli: upgrade (works)
+### cli: upgrade
 
 ```
 alembic upgrade head
 ```
 
-### programmatically: upgrade (doesn't work)
+### programmatically: upgrade
 
 See `run_async_upgrade` in `database.py` called from `main.py` on app startup.
